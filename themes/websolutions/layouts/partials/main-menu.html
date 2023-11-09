@@ -1,0 +1,18 @@
+<div id="main-menu" class="main-menu">
+    <ul>
+        {{ $currentPage := . }}
+        {{ range .Site.Menus.main }}
+            {{ $active := or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }}
+            {{ $active = or $active (eq .Name $currentPage.Title) }}
+            {{ $active = or $active (and (eq .Name "Έργα") (eq $currentPage.Section "portfolio")) }}
+            {{ $active = or $active (and (eq .Name "Τεχνολογίες") (eq $currentPage.Section "technologies")) }}
+{{/*            {{ $active = or $active (and (eq .Name "Tags") (eq $currentPage.Section "tags")) }}*/}}
+            <li class="menu-item-{{ .Name | lower }}{{ if $active }} active{{ end }}">
+                <a href="{{.URL}}">
+                    {{ .Pre }}
+                    <span>{{ .Name }}</span>
+                </a>
+            </li>
+        {{end}}
+    </ul>
+</div>

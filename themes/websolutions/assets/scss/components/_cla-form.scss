@@ -1,0 +1,36 @@
+.contact .contact-info{
+  font-size: 21px;
+  color: #5f5e5f;
+  font-weight: 500;
+}
+
+.contact .contact-info a{
+  color: #5f5e5f;
+  font-weight: 500;
+  margin-bottom: 15px;
+  display: block;
+  text-decoration: none;
+}
+
+input.inp{
+  width: 100%;
+  margin-bottom: 30px;
+  border:solid 3px #212121;
+  border-radius: 50px;
+  -webkit-border-radius: 50px;
+  height: 54px;
+  font-size: 13px;
+  padding-left: 15px;
+  outline: 0;
+}
+
+textarea.form-message{
+  width: 100%;
+  margin-bottom: 30px;
+  border:solid 3px #212121;
+  border-radius: 23px;
+  -webkit-border-radius: 23px;
+  font-size: 13px;
+  padding: 15px;
+  outline: 0;
+}

@@ -1,0 +1,45 @@
+baseURL: "https://www.websolutions.com.cy/"
+languageCode: "el"
+title: websolutions.com.cy
+themesDir: themes
+theme: websolutions
+disableKinds:
+  - taxonomy
+params:
+  google_analytics_id: UA-37407298-11
+menu:
+  main:
+    - name: Αρχική
+      url: /
+      weight: 1
+    - name: Υπηρεσίες
+      url: /services/
+      weight: 2
+    - name: Έργα
+      url: /portfolio/
+      weight: 3
+    - name: Τεχνολογίες
+      url: /technologies/
+      weight: 4
+    - name: Επικοινωνία
+      url: /contact/
+      weight: 5
+
+markup:
+  goldmark:
+    extensions:
+      definitionList: true
+      footnote: true
+      linkify: true
+      strikethrough: true
+      table: true
+      taskList: true
+      typographer: true
+    parser:
+      attribute: true
+      autoHeadingID: true
+      autoHeadingIDType: github
+    renderer:
+      hardWraps: false
+      unsafe: true
+      xhtml: false

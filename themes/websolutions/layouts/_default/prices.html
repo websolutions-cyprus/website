@@ -1,0 +1,156 @@
+{{ define "header_css" }}
+    {{ $style := resources.Get "scss/bootstrap/bootstrap.scss" |  toCSS }}
+    <link rel="stylesheet" href="{{ ($style | minify | fingerprint).RelPermalink }}">
+    {{ with  .Resources.GetMatch "table.css" }}
+        <link rel="stylesheet" href="{{ .RelPermalink}}"/>
+    {{ end }}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+{{ end }}
+{{ define "body_classes" }}page-pricelist-single{{ end }}
+{{ define "header_classes" }}{{ end }}
+{{define "main"}}
+    <div class="container-fluid">
+        <section class="titlebar">
+            <h1 class="page-title">Τιμοκατάλογος</h1>
+            <div id="particles-js"></div>
+            <p class="bottom_30">
+                {{ .Content }}
+            </p>
+        </section>
+        <hr class="col-md-6 bottom_60">
+        <div class="cont">
+            <div class="pricing-plan card-group d-flex">
+                <div class="card set-price p-1 d-none d-lg-none d-lg-block">
+                    <div class="card-header text-center pb-4 item" style="height: 180.2px;">
+                        <h5 class="pt-3 text-white card-title">Τιμοκατάλογος</h5>
+                        <span class="h2 text-white">Χαρακτηριστικά</span>
+                        <p class="small text-white">ΣΤΗΝ ΚΕΝΤΡΙΚΗ ΤΙΜΗ ΔΕΝ ΣΥΜΠΕΡΙΛΑΜΒΑΝΕΤΑΙ ΚΟΣΤΟΣ ΣΕΡΒΕΡ &amp;
+                            ΣΥΝΤΗΡΗΣΗΣ</p>
+                    </div>
+                    <div class="card-body d-flex flex-column">
+                        <ul class="list-unstyled text-right">
+                            <li>Επιλογή σχεδίου</li>
+                            <li>Αριθμός σελίδων</li>
+                            <li>CMS</li>
+                            <li>Εκπαίδευση χρήσης</li>
+                            <li>Responsive Design</li>
+                            <li>On-site SEO</li>
+                            <li>Τεχνολογίες</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="w-100 d-md-none mt-4"></div>
+                <div class="card p-1 starter">
+                    <div class="card-header text-center pb-4 item" style="height: 180.2px;">
+                        <h5 class="pt-3 text-white card-title">Στατική ιστοσελίδα</h5>
+                        <span class="h1 text-white">€180</span>
+                        <p class="small text-white">ΚΟΣΤΟΣ ΣΕΡΒΕΡ &amp; ΣΥΝΤΗΡΗΣΗΣ €45/έτος</p>
+                    </div>
+                    <div class="card-body d-flex flex-column">
+                        <ul class="list-unstyled text-center">
+                            <li>
+                                <span class="d-lg-none">Επιλογή σχεδίου  </span>
+                                <i class="fa fa-check" data-unicode="f00c"></i>
+                            </li>
+                            <li>1 - 5 Σελίδες</li>
+                            <li>
+                                <span class="d-lg-none">Συστημα διαχείρισης περιεχομένου <br>(CMS) </span>
+                                <i class="fa fa-times" data-unicode="f00d"></i></li>
+                            </li>
+                            <li>
+                                <span class="d-lg-none">Εκπαίδευση χρήσης </span>
+                                <i class="fa" data-unicode="-">-</i>
+                                <span class="d-lg-none">Δεν χρειάζεται </span>
+                            </li>
+                            <li>
+                                <span class="d-lg-none">Συμβατότητα με smartphones & tablets </span>
+                                <i class="fa fa-check" data-unicode="f00c"></i></li>
+                            <li>
+                                <span class="d-lg-none">Φιλική προς τις μηχανές αναζήτησης (On-site SEO) </span>
+                                <i class="fa fa-check" data-unicode="f00c"></i></li>
+                            <li>Hugo/HTML5/CSS/JS</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="w-100 d-md-none mt-4"></div>
+                <div class="card advanced p-1">
+                    <div class="card-header text-center pb-4 item" style="height: 180.2px;">
+                        <h5 class="pt-3 text-white card-title">Δυναμική Ιστοσελίδα</h5>
+                        <span class="h1 text-white">Απο €550</span>
+                        <p class="small text-white">ΚΟΣΤΟΣ ΣΕΡΒΕΡ &amp; ΣΥΝΤΗΡΗΣΗΣ από €120/έτος</p>
+                    </div>
+                    <div class="card-body d-flex flex-column">
+                        <ul class="list-unstyled text-center">
+                            <li>
+                                <span class="d-lg-none">Επιλογή σχεδίου  </span>
+                                <i class="fa fa-check" data-unicode="f00c"></i>
+                            </li>
+                            <li>Απεριόριστες σελίδες</li>
+                            <li>
+                                <span class="d-lg-none">Συστημα διαχείρισης περιεχομένου <br>(CMS) </span>
+                                <i class="fa fa-check" data-unicode="f00c"></i>
+                            </li>
+                            <li>
+                                <span class="d-lg-none">Εκπαίδευση χρήσης </span>
+                                <i class="fa fa-check" data-unicode="f00c"></i></li>
+                            </li>
+                            <li>
+                                <span class="d-lg-none">Συμβατότητα με smartphones & tablets </span>
+                                <i class="fa fa-check" data-unicode="f00c"></i></li>
+                            <li>
+                                <span class="d-lg-none">Φιλική προς τις μηχανές αναζήτησης (On-site SEO) </span>
+                                <i class="fa fa-check" data-unicode="f00c"></i></li>
+                            <li>PHP/Laravel/MySQL</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="w-100 d-md-none mt-4"></div>
+                <div class="card business p-1">
+                    <div class="card-header text-center pb-4 item" style="height: 180.2px;">
+                        <h5 class="pt-3 text-white card-title">Custom Web App</h5>
+                        <span class="h1 text-white">Απο €1500</span>
+                        <p class="small text-white">ΚΟΣΤΟΣ ΣΕΡΒΕΡ &amp; ΣΥΝΤΗΡΗΣΗΣ από €200/έτος</p>
+                    </div>
+                    <div class="card-body d-flex flex-column">
+                        <ul class="list-unstyled text-center">
+                            <li>
+                                <span class="d-lg-none">Επιλογή σχεδίου  </span>
+                                <i class="fa fa-check" data-unicode="f00c"></i>
+                            </li>
+                            <li>Απεριόριστες σελίδες</li>
+                            <li>
+                                <span class="d-lg-none">Συστημα διαχείρισης περιεχομένου <br>(CMS) </span>
+                                <i class="fa fa-check" data-unicode="f00c"></i>
+                            </li>
+                            <li>
+                                <span class="d-lg-none">Εκπαίδευση χρήσης </span>
+                                <i class="fa fa-check" data-unicode="f00c"></i>
+                            </li>
+                            <li>
+                                <span class="d-lg-none">Συμβατότητα με smartphones & tablets </span>
+                                <i class="fa fa-check" data-unicode="f00c"></i></li>
+                            <li>
+                                <span class="d-lg-none">Φιλική προς τις μηχανές αναζήτησης (On-site SEO) </span>
+                                <i class="fa fa-check" data-unicode="f00c"></i></li>
+                            <li>Golang/PHP/Laravel/SQL & NoSQL/Elasticsearch/Angular...</li>
+                        </ul>
+                    </div>
+                </div>
+                {{ with .Site.GetPage "/contact" }}
+                    <a class="btn btn-lg btn-block btn-dark mt-auto" href="{{ .Permalink }}">Επικοινωνία</a>
+                {{ end }}
+            </div>
+        </div> <!-- cont end -->
+    </div>
+
+{{end}}
+{{define "footer_js"}}
+    {{ with  .Resources.GetMatch "jquery.matchHeight.js" }}
+        <script type="text/javascript" src="{{ ( . | minify | fingerprint).RelPermalink }}"></script>
+    {{ end }}
+    <script>
+        $(function () {
+            $('.item').matchHeight();
+        });
+    </script>
+{{end}}
