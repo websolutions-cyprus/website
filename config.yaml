@@ -1,6 +1,6 @@
-baseURL: "https://www.websolutions.com.cy/"
+baseURL: "https://www.websolutions.cy/"
 languageCode: "el"
-title: websolutions.com.cy
+title: websolutions.cy
 themesDir: themes
 theme: websolutions
 disableKinds:
