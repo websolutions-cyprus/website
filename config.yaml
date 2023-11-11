@@ -5,8 +5,6 @@ themesDir: themes
 theme: websolutions
 disableKinds:
   - taxonomy
-params:
-  google_analytics_id: UA-37407298-11
 menu:
   main:
     - name: Αρχική
