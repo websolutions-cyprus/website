@@ -10,6 +10,8 @@
     <meta name="description" content="{{ .Params.description }}">
     <link rel="icon" href="{{ "favicon-32x32.png" | relURL }}">
 
+    <link rel="canonical" href="{{ .Permalink }}" />
+
     <!-- CSS-->
     {{ if .Site.IsServer }}
         {{ $style := resources.Get "scss/style.scss" | resources.ExecuteAsTemplate "style.scss" . | toCSS (dict "targetPath" "css/style.css" "enableSourceMap" true) }}
