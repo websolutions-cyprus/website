@@ -5,7 +5,7 @@ logo_darkmode: "images/logo_dark_mode.svg"
 logo_text: "WEBsolutions.cy"
 navbar_fixed: true
 theme_switcher: true
-theme_default: "dark"
+theme_default: "system"
 contact_form_action: "https://forms.websolutions.cy/f/5045b309-cd7e-4981-99fe-57de2b8916bc"
 
 
