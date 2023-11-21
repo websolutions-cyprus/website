@@ -23,10 +23,10 @@
   translation: Share
 
 - id: search_input_placeholder
-  translation: Search Post ...
+  translation: Αναζήτηση...
 
 - id: no_results_for
-  translation: No results for
+  translation: Δεν υπάρχουν αποτελέσματα για
 
 - id: empty_search_results_placeholder
-  translation: Type something to search..
+  translation: Πληκτρολογήστε κάτι για αναζήτηση..
