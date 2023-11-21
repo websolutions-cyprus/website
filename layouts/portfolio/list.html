@@ -1,0 +1,22 @@
+{{ define "main" }}
+  <section class="section-sm">
+    <div class="container">
+      <div class="row justify-center">
+        <div class="intro">
+          <div class="container">
+            <div class="row justify-content-start">
+              <div class="col-12 order-2 order-md-1">
+                  {{ .Content }}
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="md:col-10 lg:col-7 text-center">
+            {{ range .Pages.ByWeight }}
+               <div class="col-12 mb-6 mt-6 border-b-2">{{ .Render "summary" }}</div>
+            {{ end }}
+        </div>
+      </div>
+    </div>
+  </section>
+{{ end }}

@@ -1,0 +1,138 @@
+{{ define "main" }}
+    {{ with .Params.banner }}
+      <section class="section pt-14">
+        <div class="container">
+          <div class="row justify-center">
+            <div class="lg:col-7 mb-8 text-center">
+              <h1 class="mb-4">
+                  {{ .title | markdownify }}
+              </h1>
+              <p class="mb-4">
+                  {{ .content | markdownify }}
+              </p>
+              <ul>
+                  {{ range .services }}
+                    <li class="mb-4 pl-6">
+                      <i class="fa fa-check"></i>
+                        {{ . | markdownify }}
+                    </li>
+                  {{ end }}
+              </ul>
+            </div>
+            <div class="col-12">
+                {{ partial "image" (dict "Src" .image "Alt" "Banner image" "Loading" "eager" "Class" "mx-auto lg:!max-w-[800px]" ) }}
+            </div>
+          </div>
+        </div>
+      </section>
+    {{ end }}
+
+    {{ with .Params.portfolio }}
+      <section class="section-sm bg-gradient">
+        <div class="container">
+          <div class="row">
+            <div class="md:col-10 lg:col-8 xl:col-6 mx-auto mb-12 text-center">
+              <h2 class="mb-4">
+                  {{ .Title | markdownify }}
+              </h2>
+              <p>
+                  {{ .content | markdownify }}
+              </p>
+            </div>
+            <div class="col-12">
+              <div class="swiper testimonial-slider">
+                <div class="swiper-wrapper">
+                    {{ range first 10 (where $.Site.RegularPages "Section" "portfolio").ByWeight }}
+                        {{ $pageTitle := .Page.Title }}
+                        <div class="swiper-slide">
+                          <div
+                            class="bg-theme-light dark:bg-darkmode-theme-light rounded-lg p-6">
+                            <div class="mt-2 flex items-center h-24">
+                                {{ with .Resources.GetMatch "logo*" }}
+                                  <div class="text-dark dark:text-white flex-shrink-0">
+                                      {{ partial "image" (dict "Src" .Permalink "Size" "70x30" "Class" "rounded-full" "Alt" $pageTitle) }}
+                                  </div>
+                                {{end}}
+                              <div class="ml-4">
+                                <h3 class="h5 font-primary font-semibold">
+                                    {{ $pageTitle }}
+                                </h3>
+                                <p class="text-dark dark:text-white">
+                                    {{ .Description | markdownify }}
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                    {{ end }}
+                </div>
+                <div
+                  class="testimonial-slider-pagination mt-9 flex items-center justify-center text-center"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    {{ end }}
+
+
+    {{ with .Params.technologies }}
+      <section class="section-sm">
+        <div class="container">
+          <div class="row">
+            <div class="md:col-10 lg:col-8 xl:col-6 mx-auto mb-12 text-center">
+              <h2 class="mb-4">
+                  {{ .Title | markdownify }}
+              </h2>
+              <p>
+                  {{ .content | markdownify }}
+              </p>
+            </div>
+            <div class="col-12">
+              <div class="swiper tech-slider">
+                <div class="swiper-wrapper pb-12">
+                    {{ range (where $.Site.RegularPages "Section" "technologies").ByWeight }}
+                      <div class="swiper-slide">
+                          {{ partial "tech-card.html" . }}
+                      </div>
+                    {{ end }}
+                </div>
+                <div
+                  class="swiper-pagination"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    {{ end }}
+
+
+    <section class="mb-28">
+      <div class="container">
+        <div class="rounded-xl bg-theme-light px-4 py-16 dark:bg-darkmode-theme-light xl:p-20">
+          <div class="row items-center justify-between">
+              {{ range where .Site.RegularPages "Section" "blog" }}
+                <div class="mb-10 md:col-5 lg:col-4 md:order-2 md:mb-0">
+                  <a href="{{.Permalink}}">
+                      {{ partial "image" (dict "Src"  (.Resources.GetMatch "thumbnail.jpg").Permalink "Size" "380x270" "Class" "w-full" "Alt" .Title) }}
+                  </a>
+                </div>
+                <div class="md:col-7 md:order-1">
+                  <a href="{{.Permalink}}">
+                    <h2 class="mb-2">{{.Title}}</h2>
+                  </a>
+                  <p class="mb-6">{{.Description}}</p>
+                  <a class="btn btn-primary"
+                     href="{{.Permalink}}">
+                    Περισσότερα
+                  </a>
+                </div>
+              {{end}}
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+{{ end }}
+

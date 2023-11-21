@@ -1,0 +1,5 @@
+el:
+  languageName: "El"
+  languageCode: "el"
+  contentDir: "content/greek"
+  weight: 1

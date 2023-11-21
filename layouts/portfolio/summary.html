@@ -1,0 +1,18 @@
+<div class="flex items-center h-full mb-5">
+  <div class="md:w-8/12 sm:w-full">
+    <a href="{{ .Permalink }}">
+        {{ with (.Resources.GetMatch "full-page.jpg").Fill "600x400 Top" }}
+          <img src="{{ .RelPermalink }}" alt="{{ $.Title }}" class="w-full h-auto">
+        {{ end }}
+    </a>
+  </div>
+  <div class="md:w-4/12 sm:w-full md:pl-4 sm:pl-0">
+    <h2 class="text-2xl font-bold mb-2">
+      <a href="{{ .Permalink }}">
+          {{ .Title }}
+        <i class="fa fa-arrow-right pl-2"></i>
+      </a>
+    </h2>
+      {{ .Content | truncate 120 "…" }}
+  </div>
+</div>

@@ -1,0 +1,25 @@
+{{ define "main" }}
+    {{ partial "page-header" . }}
+
+    <section class="section-xs">
+      <div class="container">
+        <div class="row justify-center">
+          <div class="lg:col-10">
+            <div class="content">
+                {{ with .Resources.GetMatch "logo*" }}
+                  <div class="text-dark dark:text-white flex-shrink-0 text-center">
+                      {{ partial "image" (dict "Src" .Permalink "Size" "480" "Class" "rounded" "Alt" $.Title) }}
+                  </div>
+                {{end}}
+                {{.Content}}
+              <div class="mt-2">
+                <span class="italic font-bold">Περισσότερες Πληροφορίες:</span>
+                <a target="_blank" href="{{.Params.origin}}">{{.Params.origin}}</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+{{ end }}
+

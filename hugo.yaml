@@ -1,0 +1,105 @@
+baseURL: "https://www.websolutions.cy/"
+defaultContentLanguage: el
+title: websolutions.cy
+theme: hugoplate
+timeZone: "Asia/Nicosia"
+disableKinds:
+  - taxonomy
+
+services:
+  googleAnalytics:
+    ID: G-0TNPTS6PWB
+
+module:
+  mounts:
+    - source: "assets"
+      target: "assets"
+    - source: "hugo_stats.json"
+      target: "assets/watching/hugo_stats.json"
+
+build:
+  noJSConfigInAssets: false
+  useResourceCacheWhen: 'fallback'
+  buildStats:
+    enable: true
+  cachebusters:
+    - source: 'assets/watching/hugo_stats\.json'
+      target: 'style\.css'
+    - source: '(postcss|tailwind)\.config\.js'
+      target: 'css'
+    - source: 'assets/.*\.(js|ts|jsx|tsx)'
+      target: 'js'
+    - source: 'assets/.*\.(css|scss|sass)'
+      target: 'css'
+    - source: 'data/.*\.(.*)$'
+      target: 'css'
+    - source: 'assets/.*\.(.*)$'
+      target: '$1'
+
+outputs:
+  home:
+    - "HTML"
+    - "RSS"
+    - "WebAppManifest"
+    - "SearchIndex"
+
+imaging:
+  # See https://github.com/disintegration/imaging
+  # Default JPEG or WebP quality setting. Default is 75.
+  quality: 90
+  resampleFilter: "Lanczos"
+
+caches:
+  images:
+    dir: ":resourceDir/_gen"
+    maxAge: "720h"
+  assets:
+    dir: ":resourceDir/_gen"
+    maxAge: "720h"
+
+# Markup
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+  highlight:
+    style: 'monokai' # see https://xyproto.github.io/splash/docs/all.html
+  tableOfContents:
+    startLevel: 2
+    endLevel: 5
+    ordered: false
+
+mediaTypes:
+  "application/manifest+json":
+    suffixes:
+      - "webmanifest"
+
+outputFormats:
+  WebAppManifest:
+    mediaType: "application/manifest+json"
+    rel: "manifest"
+  SearchIndex:
+    mediaType: "application/json"
+    baseName: "searchindex"
+    isPlainText: true
+    notAlternative: true
+
+# Plugins
+params:
+  plugins:
+    css:
+      - link: "plugins/swiper/swiper-bundle.css"
+        lazy: false
+      - link: "plugins/font-awesome/v6/brands.css"
+        lazy: true
+      - link: "plugins/font-awesome/v6/solid.css"
+        lazy: true
+      - link: "plugins/font-awesome/v6/icons.css"
+        lazy: true
+    js:
+      - link: "js/search.js"
+        lazy: true
+      - link: "plugins/swiper/swiper-bundle.js"
+        lazy: false
+      - link: "js/custom.js"
+        lazy: true

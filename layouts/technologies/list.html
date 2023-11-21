@@ -1,0 +1,30 @@
+{{ define "main" }}
+  <section class="section-sm">
+    <div class="container">
+      <div class="row justify-center">
+        <div class="intro">
+          <div class="container">
+            <div class="flex flex-wrap justify-start">
+              <div class="w-full md:w-1/2 order-2 md:order-1">
+                  {{ .Content }}
+              </div>
+                {{ if .Params.intro_image }}
+                  <div class="w-full md:w-1/2 lg:w-6/12 order-1 md:order-2 relative">
+                      {{ partial "image" (dict "Src" .Params.intro_image "Context" .Page "Class" "w-full") }}
+                  </div>
+                {{ end }}
+            </div>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 mx-auto text-center mb-6 mt-6">
+            {{ range .Pages.ByWeight }}
+              <div>{{ .Render "summary" }}</div>
+            {{ end }}
+        </div>
+
+
+      </div>
+    </div>
+  </section>
+{{ end }}

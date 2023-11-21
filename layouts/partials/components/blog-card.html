@@ -1,0 +1,14 @@
+<div class="bg-body dark:bg-darkmode-body">
+  <a href="{{ .RelPermalink }}">
+      {{ partial "image" (dict "Src" "thumbnail.jpg" "Context" .Page "Class" "mb-6 w-full rounded") }}
+  </a>
+  <h4 class="mb-3">
+    <a href="{{ .RelPermalink }}">
+        {{ .Title }}
+    </a>
+  </h4>
+  <p class="mb-6">{{ .Summary }}</p>
+  <a class="btn btn-outline-primary btn-sm" href="{{ .RelPermalink }}">
+      {{ i18n "read_more" }}
+  </a>
+</div>

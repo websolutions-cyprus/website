@@ -1,0 +1,54 @@
+# default parameters
+favicon: "images/favicon.png"
+logo: "images/logo.svg"
+logo_darkmode: "images/logo_dark_mode.svg"
+logo_text: "WEBsolutions.cy"
+navbar_fixed: true
+theme_switcher: true
+theme_default: "dark"
+contact_form_action: "https://forms.websolutions.cy/f/5045b309-cd7e-4981-99fe-57de2b8916bc"
+
+
+# Navigation button
+navigation_button:
+  enable: false
+  label: "get a quote"
+  link: "contact"
+
+# search
+search:
+  enable: true
+  primary_color: "#121212"
+  include_all_sections: true
+  show_image: true
+  show_description: true
+  show_tags: true
+  show_categories: true
+
+# seo meta data for OpenGraph / Twitter Card
+metadata:
+  description: "Κατασκευή ιστοσελίδων με εξειδίκευση σε eCommerce"
+  author: "Panagiotis Koursaris"
+  image: "images/websolutions-cyprus-hero.jpeg"
+
+# site verifications
+site_verification:
+  google: ""
+  bing: ""
+  baidu: ""
+  facebook: ""
+  mastodon: ""
+
+# sidebar widgets
+widgets:
+  sidebar:
+    - "categories"
+    - "tags"
+
+# google map
+google_map:
+  enable: true
+  map_api_key: "AIzaSyB99NqT_aPG-iTjYFnQpED6I7OKMskyn3s"
+  map_latitude: "34.92605009662496"
+  map_longitude: "33.593560067461"
+  map_marker: "images/map-marker.png"

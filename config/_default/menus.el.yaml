@@ -1,0 +1,16 @@
+main:
+  - name: Αρχική
+    url: /
+    weight: 1
+  - name: Υπηρεσίες
+    url: /services/
+    weight: 2
+  - name: Έργα
+    url: /portfolio/
+    weight: 3
+  - name: Τεχνολογίες
+    url: /technologies/
+    weight: 4
+  - name: Επικοινωνία
+    url: /contact/
+    weight: 5

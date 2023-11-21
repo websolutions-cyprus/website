@@ -1,0 +1,49 @@
+<!doctype html>
+<html
+  itemscope
+  lang="{{ site.LanguageCode | default `en-US` }}"
+  itemtype="http://schema.org/WebPage">
+  <head>
+
+    <link rel="canonical" href="{{ .Permalink }}" />
+
+    <!-- head (don't cache it) -->
+    {{ partial "essentials/head.html" . }}
+
+
+    <!-- style (always cache it) -->
+    {{ partialCached "essentials/style.html" . }}
+  </head>
+
+  <body>
+    <!-- cache partial only in production -->
+    {{ if hugo.IsProduction }}
+    {{ else }}
+      <!-- tailwind size indicator -->
+      {{ partial "components/tw-size-indicator.html" . }}
+    {{ end }}
+
+
+    <!-- header (don't cache it) -->
+    {{ partial "essentials/header.html" . }}
+    {{ partial "search-modal.html" (dict "Context" . ) }}
+
+
+    <main>
+      {{ block "main" . }}{{ end }}
+    </main>
+
+    {{if ne .Page.RelPermalink "/contact/response/"}}
+        {{ partialCached "cla-form.html" . }}
+    {{end}}
+
+    <!-- cache partial only in production -->
+    {{ if hugo.IsProduction }}
+      {{ partialCached "essentials/footer.html" . }}
+      {{ partialCached "essentials/script.html" . }}
+    {{ else }}
+      {{ partial "essentials/footer.html" . }}
+      {{ partial "essentials/script.html" . }}
+    {{ end }}
+  </body>
+</html>

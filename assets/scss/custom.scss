@@ -1,0 +1,25 @@
+@media (min-width: 1024px) {
+  #nav-menu li a {
+    @apply p-3 relative;
+  }
+
+  #nav-menu li a:hover:before, #nav-menu li a.active:before {
+    @apply w-full transition-all duration-200;
+    width: calc(100% - 40px);
+  }
+
+  #nav-menu li a:before {
+    content: "";
+    @apply w-0 transition-all duration-200 border-b-2 border-solid border-black dark:border-white absolute overflow-hidden bottom-0;
+  }
+}
+
+.nav-link {
+  @apply font-secondary
+}
+
+.section {
+  &-xs {
+    @apply py-2 xl:py-4;
+  }
+}

@@ -1,0 +1,79 @@
+<section>
+  <div class="container">
+    <div class="row">
+      <h3 class="text-center mb-6">
+        Πώς μπορούμε να σας βοηθήσουμε
+      </h3>
+
+      <div class="md:col-10 lg:col-6 mx-auto">
+        <form id="cla-form" action="{{ site.Params.contact_form_action }}" method="POST">
+          <div style="position: absolute; left: -5000px;">
+            <label for="honeypot">Leave this field empty:</label>
+            <input type="text" name="honeypot" id="honeypot" />
+          </div>
+          <div class="sm:flex justify-between">
+            <div class="mb-6 sm:w-2/5 sm:mr-4">
+              <label for="name" class="form-label">
+                Όνομα <span class="text-red-500">*</span>
+              </label>
+              <input
+                id="name"
+                required
+                maxlength="70"
+                name="full_name"
+                class="form-input"
+                type="text" />
+            </div>
+            <div class="mb-6 sm:w-3/5">
+              <label for="email" class="form-label">
+                Email <span class="text-red-500">*</span>
+              </label>
+              <input
+                type="email"
+                maxlength="100"
+                required
+                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,63}$"
+                id="email"
+                name="email"
+                class="form-input"
+              />
+            </div>
+
+          </div>
+          <div class="sm:flex justify-between">
+            <div class="mb-6 sm:w-2/5 sm:mr-4">
+              <label for="telephone" class="form-label">
+                Τηλέφωνο
+              </label>
+              <input maxlength="30" name="telephone" id="telephone" class="form-input" type="tel">
+            </div>
+            <div class="mb-6 sm:w-3/5">
+              <label for="website" class="form-label">
+                Υπάρχουσα Ιστοσελίδα
+              </label>
+              <input
+                id="website"
+                name="website"
+                class="form-input"
+                type="text" />
+            </div>
+
+          </div>
+          <div class="mb-6">
+            <label for="message" class="form-label">
+              Μήνυμα
+            </label>
+            <textarea
+              id="message"
+              name="message"
+              class="form-input"
+              rows="4"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary mx-auto arrow flex items-center justify-center mb-8">
+            ΑΠΟΣΤΟΛΗ <i class="fa-solid fa-circle-arrow-right pl-2"></i>
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

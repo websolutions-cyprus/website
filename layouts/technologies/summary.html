@@ -1,0 +1,13 @@
+<a href="{{.Permalink}}">
+  <div class="flex h-full min-h-160 items-center justify-center border-b-2 border-gray-300 text-center">
+      {{$pageTitle := .Title}}
+      {{ with .Resources.GetMatch "logo.png" }}
+          {{ $r := .Fit "120x110" }}
+          <img src="{{$r.RelPermalink}}" alt="{{$pageTitle}}">
+      {{ else }}
+          {{ with .Resources.GetMatch "logo.svg" }}
+            <img src="{{.RelPermalink}}" alt="{{$pageTitle}}">
+          {{end}}
+      {{end}}
+  </div>
+</a>
