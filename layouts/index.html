@@ -92,17 +92,17 @@
             </div>
             <div class="col-12">
               <div class="swiper tech-slider">
-                <div class="swiper-wrapper pb-12 flex justify-center items-center space-x-4">
+                <div class="swiper-wrapper mb-6">
                     {{ range (where $.Site.RegularPages "Section" "technologies").ByWeight }}
-                      <div class="swiper-slide">
+                      <div class="swiper-slide m-auto">
                         <a href="{{.Permalink}}">
                             {{$pageTitle := .Title}}
                             {{ with  (.Resources.GetMatch "logo.png") }}
-                                {{$image := .Process "resize 150x webp"}}
-                                <img src="{{ $image.RelPermalink}}" alt="{{$pageTitle}}">
+                                {{$image := .Process "Resize 140x webp"}}
+                                <img width="70" height="70" src="{{ $image.RelPermalink}}" alt="{{$pageTitle}}">
                             {{ else }}
                                 {{ with .Resources.GetMatch "logo.svg" }}
-                                  <img src="{{ .RelPermalink}}" alt="{{$pageTitle}}">
+                                  <img width="70" height="70" src="{{ .RelPermalink}}" alt="{{$pageTitle}}">
                                 {{end}}
                             {{end}}
                         </a>
