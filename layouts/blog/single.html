@@ -19,16 +19,21 @@
         </article>
       </div>
 
-        {{ with .Site.GetPage "/technologies/sylius" }}
           <div class="section pb-0">
             <h2 class="h3 mb-12">{{ i18n "related_posts" }}</h2>
             <div class="row">
+              {{ with .Site.GetPage "/technologies/shopware" }}
               <div class="lg:col-4">
-                  {{ partial "components/blog-card" . }}
+                {{ partial "components/blog-card" . }}
               </div>
+              {{ end }}
+              {{ with .Site.GetPage "/technologies/sylius" }}
+              <div class="lg:col-4">
+                {{ partial "components/blog-card" . }}
+              </div>
+              {{ end }}
             </div>
           </div>
-        {{ end }}
     </div>
   </section>
 {{ end }}
