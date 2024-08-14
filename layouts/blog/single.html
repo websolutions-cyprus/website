@@ -19,21 +19,51 @@
         </article>
       </div>
 
-          <div class="section pb-0">
-            <h2 class="h3 mb-12">{{ i18n "related_posts" }}</h2>
-            <div class="row">
-              {{ with .Site.GetPage "/technologies/shopware" }}
-              <div class="lg:col-4">
-                {{ partial "components/blog-card" . }}
-              </div>
-              {{ end }}
-              {{ with .Site.GetPage "/technologies/sylius" }}
-              <div class="lg:col-4">
-                {{ partial "components/blog-card" . }}
-              </div>
-              {{ end }}
+      <div class="section pb-0">
+        <h3 class="h3 mb-12">Οι Κορυφαίες επιλογές πλατφόρμας ηλεκτρονικού εμπορίου...</h3>
+        <h5 class="h5 mb-12">που πληρούν τα σημαντικότερα κριτήρια:</h5>
+        <div class="row">
+          {{ with .Site.GetPage "/technologies/shopware" }}
+          <div class="lg:col-6">
+            <div class="bg-body dark:bg-darkmode-body grid grid-rows-[auto,1fr,auto] h-full">
+              <a href="{{ .RelPermalink }}">
+                <div class="mb-6 w-full h-48 flex justify-center items-center">
+                  {{ partial "image" (dict "Src" "logo.svg" "Context" .Page "Class" "max-h-full object-contain rounded") }}
+                </div>
+              </a>
+              <h4 class="mb-3">
+                <a href="{{ .RelPermalink }}">
+                  {{ .Title }}
+                </a>
+              </h4>
+              <a class="btn btn-outline-primary btn-sm" href="{{ .RelPermalink }}">
+                {{ i18n "read_more" }}
+              </a>
             </div>
           </div>
+          {{ end }}
+
+          {{ with .Site.GetPage "/technologies/sylius" }}
+          <div class="lg:col-6">
+            <div class="bg-body dark:bg-darkmode-body grid grid-rows-[auto,1fr,auto] h-full">
+              <a href="{{ .RelPermalink }}">
+                <div class="mb-6 w-full h-48 flex justify-center items-center">
+                  {{ partial "image" (dict "Src" "logo.svg" "Context" .Page "Class" "max-h-full object-contain rounded") }}
+                </div>
+              </a>
+              <h4 class="mb-3">
+                <a href="{{ .RelPermalink }}">
+                  {{ .Title }}
+                </a>
+              </h4>
+              <a class="btn btn-outline-primary btn-sm" href="{{ .RelPermalink }}">
+                {{ i18n "read_more" }}
+              </a>
+            </div>
+          </div>
+          {{ end }}
+        </div>
+      </div>
     </div>
   </section>
 {{ end }}
