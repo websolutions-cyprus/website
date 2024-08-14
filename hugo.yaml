@@ -5,7 +5,7 @@ theme: hugoplate
 timeZone: "Asia/Nicosia"
 disableKinds:
   - taxonomy
-
+summaryLength: 30
 services:
   googleAnalytics:
     ID: G-0TNPTS6PWB
