@@ -167,10 +167,3 @@
 <!-- ########## twitter others meta ############### -->
 <meta name="twitter:title" content="{{ $title }}" />
 <meta name="twitter:description" content="{{ $description }}" />
-
-{{ with site.Social.twitter }}
-  <meta name="twitter:site" content="@{{ . }}" />
-{{ end }}
-{{ range site.Authors }}
-    {{ with .twitter }}<meta name="twitter:creator" content="@{{ . }}" />{{ end }}
-{{ end }}

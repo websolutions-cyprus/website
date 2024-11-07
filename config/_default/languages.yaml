@@ -3,3 +3,8 @@ el:
   languageCode: "el"
   contentDir: "content/greek"
   weight: 1
+en:
+  languageName: "En"
+  languageCode: "en"
+  contentDir: "content/english"
+  weight: 2

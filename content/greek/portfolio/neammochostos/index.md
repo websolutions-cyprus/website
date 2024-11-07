@@ -2,6 +2,7 @@
 title: Neammochostos
 description: Ανάπτυξη ειδησεογραφικής ιστοσελίδας Neammochostos
 weight: 25
+draft: true
 labels:
   - key: Ιστοσελίδα
     value: <a target="_blank" href='https://neammochostos.com'>neammochostos.com</a>

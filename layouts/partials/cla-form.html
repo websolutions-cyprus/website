@@ -2,7 +2,7 @@
   <div class="container">
     <div class="row">
       <h3 class="text-center mb-6">
-        Πώς μπορούμε να σας βοηθήσουμε
+        {{ i18n "cla_how_to_help" }}
       </h3>
 
       <div class="md:col-10 lg:col-6 mx-auto">
@@ -14,7 +14,7 @@
           <div class="sm:flex justify-between">
             <div class="mb-6 sm:w-2/5 sm:mr-4">
               <label for="name" class="form-label">
-                Όνομα <span class="text-red-500">*</span>
+                {{ i18n "name" }} <span class="text-red-500">*</span>
               </label>
               <input
                 id="name"
@@ -38,18 +38,17 @@
                 class="form-input"
               />
             </div>
-
           </div>
           <div class="sm:flex justify-between">
             <div class="mb-6 sm:w-2/5 sm:mr-4">
               <label for="telephone" class="form-label">
-                Τηλέφωνο
+                {{ i18n "tel" }}
               </label>
               <input maxlength="30" name="telephone" id="telephone" class="form-input" type="tel">
             </div>
             <div class="mb-6 sm:w-3/5">
               <label for="website" class="form-label">
-                Υπάρχουσα Ιστοσελίδα
+                {{ i18n "existing_site" }}
               </label>
               <input
                 id="website"
@@ -57,11 +56,10 @@
                 class="form-input"
                 type="text" />
             </div>
-
           </div>
           <div class="mb-6">
             <label for="message" class="form-label">
-              Μήνυμα
+              {{ i18n "msg" }}
             </label>
             <textarea
               id="message"
@@ -70,7 +68,7 @@
               rows="4"></textarea>
           </div>
           <button type="submit" class="btn btn-primary mx-auto arrow flex items-center justify-center mb-8">
-            ΑΠΟΣΤΟΛΗ <i class="fa-solid fa-circle-arrow-right pl-2"></i>
+            {{ i18n "send_btn" }} <i class="fa-solid fa-circle-arrow-right pl-2"></i>
           </button>
         </form>
       </div>

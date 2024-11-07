@@ -2,7 +2,7 @@
 title: Shopware πλατφόρμα ηλεκτρονικού εμπορίου
 description: Shopware πλατφόρμα ηλεκτρονικού εμπορίου.
 origin: https://www.shopware.com/
-weight: 2
+weight: 1
 ---
 
 ### Η πλατφόρμα eCommerce που προσφέρει απόδοση με πλούσια χαρακτηριστικά

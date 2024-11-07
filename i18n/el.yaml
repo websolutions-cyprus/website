@@ -30,3 +30,21 @@
 
 - id: empty_search_results_placeholder
   translation: Πληκτρολογήστε κάτι για αναζήτηση..
+
+- id: cla_how_to_help
+  translation: Πώς μπορούμε να σας βοηθήσουμε
+
+- id: name
+  translation: Όνομα
+
+- id: tel
+  translation: Τηλέφωνο
+
+- id: existing_site
+  translation: Υπάρχουσα Ιστοσελίδα
+
+- id: msg
+  translation: Μήνυμα
+
+- id: send_btn
+  translation: ΑΠΟΣΤΟΛΗ

@@ -19,6 +19,10 @@
   new Swiper(".testimonial-slider", {
     spaceBetween: 24,
     loop: true,
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false,
+    },
     pagination: {
       el: ".testimonial-slider-pagination",
       type: "bullets",

@@ -2,7 +2,7 @@
 title: Drupal
 description: Drupal.
 origin: https://www.drupal.org/
-weight: 47
+weight: 147
 ---
 Το Drupal είναι ένα σύστημα διαχείρισης περιεχομένου (CMS) γραμμένο στη γλώσσα προγραμματισμού [PHP]({{< ref "technologies/php" >}}). 
 Είναι ανοικτού κώδικα (open source - ελεύθερο λογισμικό). 

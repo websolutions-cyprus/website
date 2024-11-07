@@ -30,3 +30,21 @@
 
 - id: empty_search_results_placeholder
   translation: Type something to search..
+
+- id: cla_how_to_help
+  translation: How can we help you?
+
+- id: name
+  translation: Name
+
+- id: tel
+  translation: Telephone
+
+- id: existing_site
+  translation: Existing Website
+
+- id: msg
+  translation: Message
+
+- id: send_btn
+  translation: SEND
