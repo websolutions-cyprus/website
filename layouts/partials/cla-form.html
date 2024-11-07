@@ -9,7 +9,10 @@
         <form id="cla-form" action="{{ site.Params.contact_form_action }}" method="POST">
           <div style="position: absolute; left: -5000px;">
             <label for="honeypot">Leave this field empty:</label>
-            <input type="text" name="honeypot" id="honeypot" />
+            <input type="text" name="honeypot" id="honeypot"/>
+            {{ with .GetPage "response" }}
+              <input type="text" name="redirect_url" value="{{ .Permalink }}"/>
+            {{ end }}
           </div>
           <div class="sm:flex justify-between">
             <div class="mb-6 sm:w-2/5 sm:mr-4">
@@ -22,7 +25,7 @@
                 maxlength="70"
                 name="full_name"
                 class="form-input"
-                type="text" />
+                type="text"/>
             </div>
             <div class="mb-6 sm:w-3/5">
               <label for="email" class="form-label">
@@ -54,7 +57,7 @@
                 id="website"
                 name="website"
                 class="form-input"
-                type="text" />
+                type="text"/>
             </div>
           </div>
           <div class="mb-6">
